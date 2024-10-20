@@ -20,7 +20,7 @@ To run this application, you need to have Python 3.x installed along with the fo
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/budget-tracker.git
+   git clone https://github.com/leadrelic/budget-tracker.git
    cd budget-tracker
    ```
 
@@ -56,4 +56,4 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any inquiries or issues, feel free to reach out at your.email@example.com.
+For any inquiries or issues, feel free to reach out at leadrelic@gmail.com.
