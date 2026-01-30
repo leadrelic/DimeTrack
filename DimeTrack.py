@@ -1,4 +1,62 @@
+#!/usr/bin/env python3
+"""
+Budget Tracker Pro - A comprehensive personal finance management application
+Auto-installs all required dependencies on first run
+"""
+
 import sys
+import subprocess
+import importlib.util
+
+def check_and_install_packages():
+    """Check for required packages and install them if missing"""
+    required_packages = {
+        'PyQt6': 'PyQt6',
+        'matplotlib': 'matplotlib',
+        'reportlab': 'reportlab'
+    }
+    
+    missing_packages = []
+    
+    print("Checking dependencies...")
+    for package_name, pip_name in required_packages.items():
+        if importlib.util.find_spec(package_name) is None:
+            missing_packages.append(pip_name)
+            print(f"  ✗ {package_name} - NOT FOUND")
+        else:
+            print(f"  ✓ {package_name} - OK")
+    
+    if missing_packages:
+        print(f"\nInstalling missing packages: {', '.join(missing_packages)}")
+        print("This may take a minute...\n")
+        
+        for package in missing_packages:
+            try:
+                print(f"Installing {package}...")
+                subprocess.check_call([
+                    sys.executable, 
+                    "-m", 
+                    "pip", 
+                    "install", 
+                    "--break-system-packages",
+                    package
+                ])
+                print(f"  ✓ {package} installed successfully\n")
+            except subprocess.CalledProcessError as e:
+                print(f"  ✗ Failed to install {package}: {e}")
+                print(f"\nPlease install manually: pip install {package}")
+                sys.exit(1)
+        
+        print("\n" + "="*60)
+        print("All dependencies installed successfully!")
+        print("="*60 + "\n")
+    else:
+        print("\nAll dependencies are already installed!\n")
+
+# Check and install dependencies before importing them
+check_and_install_packages()
+
+# Now import the packages
 import json
 from datetime import datetime
 from pathlib import Path
