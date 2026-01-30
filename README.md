@@ -1,4 +1,4 @@
-# Budget Tracker Pro 💰
+# DimeTrack Pro 💰
 
 A modern, feature-rich personal finance management application built with PyQt6.
 
@@ -32,7 +32,7 @@ A modern, feature-rich personal finance management application built with PyQt6.
 Simply run the script - it will automatically install all dependencies:
 
 ```bash
-python budget_tracker.py
+python DimeTrack.py
 ```
 
 The script will check for required packages and install:
@@ -59,7 +59,7 @@ pip install PyQt6 matplotlib reportlab
 ### Running the Application
 
 ```bash
-python budget_tracker.py
+python DimeTrack.py
 ```
 
 ### Adding Transactions
